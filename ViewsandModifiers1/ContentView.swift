@@ -49,6 +49,14 @@ struct ContentView: View {
                     .foregroundStyle(.blue)
                 }
         }
+        VStack {
+            Text("Gryffindor")
+                .font(.largeTitle)
+            Text("Hufflepuff")
+            Text("Ravenclaw")
+            Text("Slytherin")
+        }
+        .font(.title)
     }
 }
 
