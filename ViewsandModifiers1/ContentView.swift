@@ -51,7 +51,7 @@ struct ContentView: View {
         }
         VStack {
             Text("Gryffindor")
-                .font(.largeTitle)
+                .blur(radius: 5.0)
             Text("Hufflepuff")
             Text("Ravenclaw")
             Text("Slytherin")
