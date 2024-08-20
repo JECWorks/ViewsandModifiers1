@@ -7,6 +7,19 @@
 
 import SwiftUI
 
+struct CapsuleText: View {
+    var text: String
+    var body: some View {
+        Text(text)
+            .font(.largeTitle)
+            .padding()
+//            .foregroundStyle(.white)
+            .background(.blue)
+            .clipShape(.capsule)
+    }
+    
+}
+
 struct ContentView: View {
     @State private var useRedText = true
     var motto1: some View {
@@ -74,6 +87,19 @@ struct ContentView: View {
             Text("Slytherin")
         }
         .font(.title)
+        
+        VStack(spacing: 10) {
+                Text("First")
+                    .font(.largeTitle)
+                    .padding()
+                    .foregroundStyle(.white)
+                    .background(.blue)
+                    .clipShape(.capsule)
+
+                CapsuleText(text: "Second")
+                CapsuleText(text: "Third")
+                    .foregroundStyle(.yellow)
+                }
     }
 }
 
