@@ -9,6 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var useRedText = true
+    var motto1: some View {
+        Text("Draco dormiens")
+    }
+    let motto2 = Text("nunquam titillandus")
+    
+    var spells: some View {
+        Group {
+            Text("Lumos")
+            Text("Obliviate")
+        }
+    }
+    
+    @ViewBuilder var spells2: some View {
+        Text("Oculus reparo")
+        Text("Expelliarmus")
+    }
     
     var body: some View {
         VStack {
@@ -21,11 +37,12 @@ struct ContentView: View {
                 .background(.green)
                 .padding()
                 .background(.yellow)
-            Button("Hello World") {
-                print(type(of: self.body))
-            }
-            .frame(width: 200, height: 200)
-            .background(.green)
+            motto1
+                .foregroundStyle(.green)
+            motto2
+                .foregroundStyle(.teal)
+            spells
+                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
             
             
         }
