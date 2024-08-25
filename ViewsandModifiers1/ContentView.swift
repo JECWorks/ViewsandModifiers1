@@ -7,6 +7,20 @@
 
 import SwiftUI
 
+struct BlueText: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.largeTitle)
+            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+    }
+}
+
+extension View {
+    func blueStyle() -> some View {
+        modifier(BlueText())
+    }
+}
+
 struct GridStack<Content: View>: View {
     let rows: Int
     let columns: Int
