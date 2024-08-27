@@ -40,7 +40,12 @@ struct GridStack<Content: View>: View {
 }
 
 struct ContentView: View {
+    let agents = ["Cyril", "Lana", "Pam", "Sterling"]
+    @State private var selection = 0
+    
+    
     var body: some View {
+                
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
@@ -57,6 +62,27 @@ struct ContentView: View {
                 
             }
         }
+        .padding()
+        // looping over an array to create independent views for each item in it
+        VStack {
+            ForEach(agents, id: \.self) {
+                Text($0)
+            }
+        }
+// ******** Custom Bindings ********
+//        let binding = Binding(
+//                    get: { selection },
+//                    set: { selection = $0 }
+//                )
+//        
+//        return VStack {
+//                    Picker("Select a number", selection: binding) {
+//                        ForEach(0..<3) {
+//                            Text("Item \($0)")
+//                        }
+//                    }
+//                    .pickerStyle(.segmented)
+//                }
     }
 }
 
